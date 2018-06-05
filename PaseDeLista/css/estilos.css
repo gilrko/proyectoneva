@@ -1,0 +1,36 @@
+body{
+	background-color: solid white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
+	text-align: center;
+}
+form{
+	background: rgb(49, 49, 146);
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 10px;
+	width: 500px;
+	height: 200px;
+	margin-top: 150px;
+	color: aliceblue
+	
+}
+footer{
+	background-color: azure;
+	text-align: center;
+	margin-top: 250px;
+}
+form button{
+	border-radius: 5px;
+	margin-top: 20px;
+}
+form input{
+	border-radius: 5px;
+	margin-top: 10px;
+}
+#TituloLista{
+	text-align: center;
+}

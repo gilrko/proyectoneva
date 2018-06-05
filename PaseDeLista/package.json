@@ -1,0 +1,23 @@
+{
+  "name": "paselista",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.7.9"
+  },
+  "devDependencies": {
+    "asar": "^0.14.0",
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
+    "electron-require": "^0.3.0",
+    "jquery": "^3.2.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "empaqueta": "electron-packager . PaseLista --overwrite --icon=logo.icns --asar",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
