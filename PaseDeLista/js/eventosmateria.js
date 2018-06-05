@@ -12,7 +12,7 @@ var iniciaApp = function () {
     var materias = function () {
         var cargarAsistencia;
         var cargarFaltas;
-
+        var requestAlumnosAsistencia;
         function pasarVariables(pagina, nombres) {
             pagina += "?";
             nomVec = nombres.split(",");
@@ -79,7 +79,15 @@ var iniciaApp = function () {
             });
         }
         var Uri;
-
+        var alumnosAsistencia = function () {
+            requestAlumnosAsistencia = $.ajax({
+                method: "GET",
+                url: "localhost:8080/php/alumnoAsistencias.php",
+                crossDomain: true,
+                datatype: "json",
+            });
+            
+        }
         function loadURL() {
             Uri = "http://itculiacan.edu.mx/dadm/apipaselista/data/obtienegrupos2.php?usuario=";
             Uri += obtenerVariables('usuario');
@@ -114,6 +122,7 @@ var iniciaApp = function () {
                     if (value.materia != undefined) {
                         asistencias(value.clavemateria, value.grupo);
                         faltas(value.clavemateria, value.grupo);
+                        alumnosAsistencia();
                         var hilera = document.createElement("tr");
                         var celda = document.createElement("td");
                         var button = document.createElement("button");
@@ -128,6 +137,9 @@ var iniciaApp = function () {
                             if (obj.respuesta) {
                                 var textAsistenciasCont = document.createTextNode(obj.cantidad);
                                 textAsistencias.appendChild(textAsistenciasCont);
+                                requestAlumnosAsistencia.done(function (data2){
+                                    console.log("LAAA VIDAAAA---->",data2)
+                                })
                             } else {
                                 var textAsistenciasCont = document.createTextNode(0);
                                 textAsistencias.appendChild(textAsistenciasCont);
